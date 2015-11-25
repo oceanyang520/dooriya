@@ -1,7 +1,53 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID">
+    
+  <display-name>dooriya</display-name>
+	<context-param>
+	      <param-name>contextConfigLocation</param-name>
+<!--        应用上下文配置文件 -->
+	      <param-value>classpath*:spring/spring-*.xml</param-value>
+	</context-param>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+<!-- 自定义监听开始 -->
+<!-- 	<listener> -->
+<!--     <listener-class>com.famework.myframedwz.domain.common.listener.StartListener</listener-class> -->
+<!--     </listener> -->
+	<listener>
+      <description>spring listener</description>
+      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+     <!-- 配置spring核心servlet  如若照这个配置，需要强制配置spring-servlet.xml文件！-->
+<!--     <servlet> -->
+<!--         <servlet-name>spring</servlet-name> -->
+<!--         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> -->
+<!--         <load-on-startup>1</load-on-startup> -->
+<!--     </servlet> -->
+<!--     url-pattern配置为/，不带文件后缀，会造成其它静态文件(js，css等)不能访问。如配为*.do，则不影响静态文件的访问 -->
+<!--     <servlet-mapping> -->
+<!--         <servlet-name>spring</servlet-name> -->
+<!--         <url-pattern>/</url-pattern> -->
+<!--     </servlet-mapping> -->
+<!--     <welcome-file-list> -->
+<!--     	<welcome-file>index.html</welcome-file> -->
+<!--      </welcome-file-list> -->
+    
+<!-- springmvc配置部分 其实就是一个普通的servlet -->
+	<servlet>
+		<description>spring mvc servlet</description>
+		<servlet-name>springMvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<description>spring mvc config</description>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/spring-mvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+      <servlet-name>springMvc</servlet-name>
+      <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
 </web-app>
