@@ -1,5 +1,7 @@
 package com.ocean.frame.main.action;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,6 +36,11 @@ public class UserAction {
     public String findUserList() {
 
         List<User> userList = this.userService.findUserList();
+        for (User user : userList) {
+            
+            System.out.println(user.getNickName());
+        }
+        
         System.out.println(userList);
         return "success";
     }
@@ -52,4 +59,19 @@ public class UserAction {
         int flag = this.userService.testAdd(test);
         return String.valueOf(flag);
     }
+    
+    //原生查询示例
+    @RequestMapping("findByProtocal")
+    @ResponseBody
+    public String findByProtocal(){
+        
+        List<HashMap<Object, Object>> list = this.userService.findListByProtocal();
+        
+        for (HashMap<Object, Object> hashMap : list) {
+            
+            System.out.println(hashMap.get("menuRoleId"));
+        }
+        return list.toString();
+    }
+    
 }

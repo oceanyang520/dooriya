@@ -19,7 +19,7 @@ public class User {
     private Integer type;
     private String imagePath;
     private Integer sex;
-    private Date birthay;
+    private Date birthday;
     private String realName;
 
     public Integer getId() {
@@ -86,12 +86,12 @@ public class User {
         this.sex = sex;
     }
 
-    public Date getBirthay() {
-        return birthay;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setBirthay(Date birthay) {
-        this.birthay = birthay;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public String getRealName() {

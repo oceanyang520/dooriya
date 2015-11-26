@@ -25,8 +25,19 @@
         </bean>
         
             <!--定义了Hibernate的SessionFactory -->
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+<!--     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"> -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+<!--                                                                          org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean -->
+    
         <property name="dataSource" ref="dataSource"/>
+        
+        <!-- hibernate配置 -->
+<!--          <property name="annotatedClasses">  -->
+          <property name="packagesToScan"> 
+<!--          -->
+           <list><value>com.ocean.frame.main.entity</value></list> 
+        </property> 
+        
         <property name="mappingDirectoryLocations"> 
 <!--             <property name="mappingResources"> -->
             <list> 
@@ -35,6 +46,10 @@
 <!--                 <value>classpath:com/saye/systemset/depart/model</value> -->
             </list> 
         </property>
+
+<!--          <property name="mappingResources"> -->
+<!--                  <value>classpath:com/ocean/frame/main/entity/MenuRole.class</value> -->
+<!--          </property> -->
         <property name="hibernateProperties">
             <props>
 <!--                 <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop> -->

@@ -32,8 +32,8 @@
         <property name="sex" type="integer">
             <column name="sex" length="1" />
         </property>
-        <property name="birthay" type="date">
-            <column name="birthay" length="32" />
+        <property name="birthday" type="date">
+            <column name="birthday" length="32" />
         </property>
         <property name="realName" type="string">
             <column name="realName" length="20" />

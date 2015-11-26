@@ -1,6 +1,7 @@
 package com.ocean.frame.main.service.Impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,11 @@ public class UserServiceImpl implements UserService {
 
     public int testAdd(Test test) {
         return this.userDao.testAdd(test);
+    }
+
+    public List<HashMap<Object, Object>> findListByProtocal() {
+        
+        return this.userDao.findListByProtocal();
     }
     
 }
