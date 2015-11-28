@@ -48,7 +48,7 @@
         </property>
 
 <!--          <property name="mappingResources"> -->
-<!--                  <value>classpath:com/ocean/frame/main/entity/MenuRole.class</value> -->
+<!--                  <value>classpath:com/ocean/frame/main/entity/MenuRole</value> -->
 <!--          </property> -->
         <property name="hibernateProperties">
             <props>
@@ -57,22 +57,29 @@
                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
 <!--                <prop key="hibernate.query.substitutions">true 1, false 0</prop>                 -->
                 <prop key="show_sql">true</prop>
-                
+<!--                 <prop key="hibernate.connection.release_mode">after_transaction</prop> -->
+                <prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
             </props>
         </property>
         
     </bean>
     
-<!--     <bean id="hibernateTemplate" class="org.hber"> -->
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+    <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
     
+<!--      <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor"> -->
+<!--          事务拦截器bean需要依赖注入一个事务管理器 -->
+<!--         <property name="transactionManager" ref="transactionManager"/> -->
+<!--         <property name="transactionAttributes"> -->
+<!--              下面定义事务传播属性 -->
+<!--             <props> -->
+<!--                 <prop key="*">PROPAGATION_REQUIRED,-Exception</prop> -->
+<!--                 <prop key="execP_*">PROPAGATION_NOT_SUPPORTED</prop> 调用存储过程用，非事务方式操作 -->
+<!--             </props> -->
+<!--         </property> -->
 <!--     </bean> -->
-    
-         <!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
-<!--          <context:component-scan base-package="com.ocean.frame.main.dao" /> -->
-<!--      <context:component-scan base-package="com.ocean.frame.main.service" /> -->
-<!--        <bean id="hibernateTemplate" abstract="true"> -->
-<!--              <property name="sessionFactory" ref="sessionFactory"/> -->
-<!--              <property name="dataSource" ref="dataSource"/> -->
-<!--        </bean> -->
-
+    <context:component-scan base-package="com.ocean.frame.*" >
+         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />   
+     </context:component-scan>   
 </beans>

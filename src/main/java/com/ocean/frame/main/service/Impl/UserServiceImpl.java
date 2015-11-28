@@ -1,6 +1,5 @@
 package com.ocean.frame.main.service.Impl;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,8 +26,16 @@ public class UserServiceImpl implements UserService {
         
     }
 
+    @Transactional(rollbackFor=Exception.class)
     public int testAdd(Test test) {
-        return this.userDao.testAdd(test);
+        
+        int flag = this.userDao.testAdd(test);
+        
+        int b = 1;
+//        String.valueOf(b);
+//        String a = null ; a.toString();
+      
+        return flag;
     }
 
     public List<HashMap<Object, Object>> findListByProtocal() {

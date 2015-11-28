@@ -52,11 +52,16 @@ public class UserAction {
         //获取参数用enum来解决
         String name = request.getParameter("name");
         int sex = Integer.parseInt(request.getParameter("sex"));
-        
+        int flag = 0;
         Test test = new Test();
         test.setName(name);
         test.setSex(sex);
-        int flag = this.userService.testAdd(test);
+        try {
+            flag = this.userService.testAdd(test);
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
         return String.valueOf(flag);
     }
     
