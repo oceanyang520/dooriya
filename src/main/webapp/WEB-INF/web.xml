@@ -34,6 +34,19 @@
 <!--     	<welcome-file>index.html</welcome-file> -->
 <!--      </welcome-file-list> -->
     
+<!--     <servlet-mapping> -->
+<!--     <servlet-name>default</servlet-name> -->
+<!--     <url-pattern>*.jpg</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+<!-- 	<servlet-mapping> -->
+<!-- 	    <servlet-name>default</servlet-name> -->
+<!-- 	    <url-pattern>*.js</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+<!-- 	<servlet-mapping> -->
+<!-- 	    <servlet-name>default</servlet-name> -->
+<!-- 	    <url-pattern>*.css</url-pattern> -->
+<!-- 	</servlet-mapping>  -->
+
 <!-- springmvc配置部分 其实就是一个普通的servlet -->
 	<servlet>
 		<description>spring mvc servlet</description>

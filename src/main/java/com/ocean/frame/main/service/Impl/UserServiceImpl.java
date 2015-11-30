@@ -31,10 +31,7 @@ public class UserServiceImpl implements UserService {
         
         int flag = this.userDao.testAdd(test);
         
-        int b = 1;
-//        String.valueOf(b);
 //        String a = null ; a.toString();
-      
         return flag;
     }
 

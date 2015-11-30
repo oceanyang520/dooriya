@@ -25,12 +25,16 @@ public class UserAction {
     
     @RequestMapping("login")
 //    @ResponseBody
-    public String loginTest(){
+    public String login(){
+        //注意拦截器
         
-        System.out.println("come in contrallor@@@@@@@");
-        return "login";
+        //注意统一登录：用户名、邮箱、手机号码，  》》》》单点登录
+        
+        System.out.println("come in login contrallor@@@@@@@");
+        return "manager/login";
     }
     
+    //查找后台管理用户
     @RequestMapping("findUserList")
     @ResponseBody
     public String findUserList() {

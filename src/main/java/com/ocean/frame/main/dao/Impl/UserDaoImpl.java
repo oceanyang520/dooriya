@@ -71,24 +71,27 @@ public class UserDaoImpl extends BaseHibernateTemplate  implements UserDao  {
     @SuppressWarnings("unchecked")
     public int testAdd(Test test) {
         
-//        Test test1 = (Test) this.getHibernateTemplate().get(Test.class, 43);
-//                .find("from Test where id = 43");
-//        test1.setName("杨海洋1ddddd2");
+        Test test1 = (Test) this.getHibernateTemplate().get(Test.class, 63);
+        test1.setName("杨海洋1ddddd2");
 //        test1.setId(43);
-//        this.getHibernateTemplate().get();
-        this.getHibernateTemplate().save(test);
-//        this.getHibernateTemplate().update(test1);
+
+        this.getHibernateTemplate().update(test1);
+        
 //        int flag = this.getHibernateTemplate().execute(new HibernateCallback() {
 //            public Object doInHibernate(org.hibernate.Session session)
 //                      throws HibernateException, SQLException {
 //                  // TODO Auto-generated method stub
-//                  Query query = session.createSQLQuery("update test set name = '很烦' where id = '44'");
+//                  Query query = session.createSQLQuery("update test set name = '很烦2' where id = '63'");
 ////                          createQuery("insert into test(name) values ('测试事务333')");
 //                  int flag = query.executeUpdate();
 //                  return flag;
 //              }
 //          });
-        int flag = 0;
+
+        //        this.getHibernateTemplate().save(test);
+        test.setName("这是临时测试1");
+        int flag = (Integer) this.getHibernateTemplate().save(test);
+//        int flag = 0;
         return flag;
     }
     
