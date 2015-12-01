@@ -14,13 +14,16 @@
         http://www.springframework.org/schema/tx 
     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-        <!-- 开启注解配置   -->
+        <!-- 开启注解配置 ，下面有了componet-scan后不再需要这个  -->
 <!--     <context:annotation-config /> -->
 
-     <!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射-->
+     <!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射，主要负责controlle的url的操作-->
      <mvc:annotation-driven  />
+     
+     <!-- 事务管理器，分为接口代理，非接口代理，切面代理 -->
      <tx:annotation-driven transaction-manager="transactionManager"  />
      <!--    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" mode="aspectj"/> -->
+     
      <!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
      <context:component-scan base-package="com.ocean.frame.*" />
 
