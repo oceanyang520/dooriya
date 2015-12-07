@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,20 +18,20 @@ import com.ocean.frame.main.entity.User;
 import com.ocean.frame.main.service.UserService;
 
 @Controller
-@RequestMapping(produces = { "text/html;charset=UTF-8" })
+@RequestMapping(value= "/user", produces = { "text/html;charset=UTF-8" })
 public class UserAction {
 
     @Autowired
     private UserService userService;
     
-    @RequestMapping("login")
+    @RequestMapping("login/{name}")
 //    @ResponseBody
-    public String login(){
+    public String login(@PathVariable("name") String name){
         //注意拦截器
         
         //注意统一登录：用户名、邮箱、手机号码，  》》》》单点登录
         
-        System.out.println("come in login contrallor@@@@@@@");
+        System.out.println("come in login contrallor@@@@@@@"+name);
         return "manager/login";
     }
     

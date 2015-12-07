@@ -39,5 +39,10 @@ public class UserServiceImpl implements UserService {
         
         return this.userDao.findListByProtocal();
     }
+
+    public User findUserBySelected(User user) {
+
+        return this.userDao.findUserBySelected(user);
+    }
     
 }

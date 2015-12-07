@@ -9,9 +9,9 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.classic.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.HibernateTemplate;
@@ -115,6 +115,17 @@ public class UserDaoImpl extends BaseHibernateTemplate  implements UserDao  {
            flag = (Integer) this.getHibernateTemplate().save(test);
         }
         return flag;
+    }
+
+    public User findUserBySelected(User user) {
+        
+//        User retUser = this.getHibernateTemplate().get(User.class, id);
+        Session session = this.getHibernateTemplate().getSessionFactory().getCurrentSession();
+        Query query = session.createQuery("from User u where u.userName =:userName and u.passWord=:passWord");
+        query.setParameter("userName", user.getUserName());
+        query.setParameter("passWord", user.getPassWord());
+        User retUser = query!=null&&query.list().size()>0?(User) query.list().get(0):null;
+        return retUser;
     }
 
 }

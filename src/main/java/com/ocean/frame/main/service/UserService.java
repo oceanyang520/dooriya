@@ -13,4 +13,6 @@ public interface UserService {
     public int testAdd (Test test);
     
     public List<HashMap<Object, Object>> findListByProtocal();
+    
+    public User findUserBySelected(User user);
 }
