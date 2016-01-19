@@ -33,6 +33,7 @@ public class SessionFilter implements Filter{
                 System.out.println("用户已登录！");
             }else{
                 System.out.println("用户未登录！");
+                //自动拦截到用户登录页面
             }
         }
         request.getParameter("");

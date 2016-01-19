@@ -24,6 +24,13 @@ public class UserAction {
     @Autowired
     private UserService userService;
     
+    /**
+    * @Description 会员登录  
+    * @param name
+    * @return
+    * @author yanghaiyang   
+    * @date 2015年12月8日 下午2:12:49
+     */
     @RequestMapping("login/{name}")
 //    @ResponseBody
     public String login(@PathVariable("name") String name){
