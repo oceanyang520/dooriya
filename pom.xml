@@ -23,6 +23,11 @@
         <version>2.5</version>
         <scope>provided</scope>
     </dependency>
+    <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+    </dependency>
      <!-- SpringFramework start-->
     <dependency>
         <groupId>org.springframework</groupId>
@@ -338,28 +343,48 @@
         <artifactId>hibernate-jpa-2.0-api</artifactId>
         <version>1.0.0.Final</version>
     </dependency>
+    <!--   hazelcast -->
+<dependency>
+    <groupId>com.hazelcast</groupId>
+    <artifactId>hazelcast</artifactId>
+    <version>3.6.2</version>
+</dependency>
   </dependencies>
+
+  
   <build>
 <!--     <finalName>dooriya</finalName> -->
-        <plugins>
-          <plugin>
+<!--         <plugins> -->
+<!--           <plugin> -->
+<!--                 <groupId>org.apache.maven.plugins</groupId> -->
+<!--                 <artifactId>maven-compiler-plugin</artifactId> -->
+<!--                 <version>3.1</version> -->
+<!--                 <configuration> -->
+<!--                     <source>1.7</source> -->
+<!--                     <target>1.7</target> -->
+<!--                     <encoding>UTF-8</encoding> -->
+<!--                     <showWarnings>true</showWarnings> -->
+<!-- 	                <compilerId>eclipse</compilerId>   -->
+<!--                 </configuration> -->
+<!--                 <dependencies>   -->
+<!--                 <dependency>   -->
+<!--                     <groupId>org.codehaus.plexus</groupId>   -->
+<!--                     <artifactId>plexus-compiler-eclipse</artifactId>   -->
+<!--                     <version>2.2</version>   -->
+<!--                 </dependency>   -->
+<!--             </dependencies>  -->
+<!--             </plugin> -->
+<!--         </plugins> -->
+           <plugins> 
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>2.3.2</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <encoding>UTF-8</encoding>
-                    <showWarnings>true</showWarnings>
-	                <compilerId>eclipse</compilerId>  
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
-                <dependencies>  
-                <dependency>  
-                    <groupId>org.codehaus.plexus</groupId>  
-                    <artifactId>plexus-compiler-eclipse</artifactId>  
-                    <version>2.2</version>  
-                </dependency>  
-            </dependencies> 
             </plugin>
         </plugins>
   </build>
