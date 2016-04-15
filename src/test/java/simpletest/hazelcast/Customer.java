@@ -1,4 +1,4 @@
-package simpletest;
+package simpletest.hazelcast;
 
 import java.io.Serializable;
 
@@ -27,6 +27,8 @@ public class Customer implements Serializable {
         this.name = name;
         this.age = age;
     }
-    
+//    public Customer(){
+//        
+//    }
     
 }
