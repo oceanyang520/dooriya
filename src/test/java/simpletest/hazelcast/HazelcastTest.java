@@ -31,8 +31,7 @@ public class HazelcastTest {
                 System.out.println(distributedObject.getName());
             }
         }
-        Test test = new Test();
-        
+
 //        Config conf = new Config();
         
                 MapStoreAdapter<String, String> mapLoader = new MapStoreAdapter<String, String>();
