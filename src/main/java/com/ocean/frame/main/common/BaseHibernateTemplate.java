@@ -7,8 +7,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 public class BaseHibernateTemplate extends HibernateDaoSupport {
 
     @Autowired
-    public void setSessionFactoryOverride(SessionFactory sessionFactory)
-    {
+    public void setSessionFactoryOverride(SessionFactory sessionFactory){
 
         super.setSessionFactory(sessionFactory);
     }

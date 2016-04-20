@@ -37,6 +37,7 @@
 <!--             <property name="mappingResources"> -->
             <list> 
 <!--                 <value>classpath:com/ocean/frame/main/entity</value> -->
+<!-- 自动装载hbm -->
                 <value>classpath:mapping/</value>
 <!--                 <value>classpath:com/saye/systemset/depart/model</value> -->
             </list> 
@@ -55,9 +56,12 @@
 <!--                 <prop key="hibernate.connection.release_mode">after_transaction</prop> -->
 <!--                         <prop key="hibernate.connection.release_mode">after_statement</prop> -->
                 <prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+<!--                 <prop key="hibernate.hbm2ddl.auto" >update</prop> -->
+                 <prop key="hibernate.hbm2ddl.auto">update</prop>   
+                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>  
             </props>
         </property>
-        
+            
     </bean>
     
 <!--         <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource" > -->
