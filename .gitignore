@@ -16,3 +16,9 @@ target/
 .gitignore
 
 .log
+/bin/
+.project
+
+.project
+
+.settings
