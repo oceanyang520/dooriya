@@ -249,11 +249,11 @@
 <!--     </dependency> -->
     <!-- shiro end-->
     <!-- alibaba json start -->
-<!--     <dependency> -->
-<!--         <groupId>com.alibaba</groupId> -->
-<!--         <artifactId>fastjson</artifactId> -->
-<!--         <version>1.1.26</version> -->
-<!--     </dependency> -->
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.1.26</version>
+    </dependency>
     <!-- alibaba json end -->
 <!--       <dependency> -->
 <!--           <groupId>com.fasterxml.jackson.core</groupId> -->

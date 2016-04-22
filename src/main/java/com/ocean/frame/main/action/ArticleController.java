@@ -26,6 +26,7 @@ public class ArticleController {
         
         Long articleId = this.articleService.addArticle(article);
 //        return  (null!=articleId?String.valueOf(articleId):0);
+        System.out.println(articleId);
         return "";
     }
     
