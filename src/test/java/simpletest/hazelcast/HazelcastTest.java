@@ -1,4 +1,4 @@
-package simpletest;
+package simpletest.hazelcast;
 
 import java.util.Collection;
 import java.util.Map;
@@ -8,8 +8,10 @@ import com.hazelcast.core.DistributedObject;
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
+import com.hazelcast.core.MapLoader;
+import com.hazelcast.core.MapStoreAdapter;
 
-public class Test {
+public class HazelcastTest {
 
     public static void main(String[] args) {
         HazelcastInstance ins = Hazelcast.newHazelcastInstance();
@@ -29,8 +31,11 @@ public class Test {
                 System.out.println(distributedObject.getName());
             }
         }
-        
+
 //        Config conf = new Config();
         
+                MapStoreAdapter<String, String> mapLoader = new MapStoreAdapter<String, String>();
+               String aaa = mapLoader.load("ddd");
+               System.out.println(aaa);
     }
 }

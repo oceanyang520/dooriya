@@ -22,8 +22,10 @@ public class ManagerAction {
       //注意拦截器
      //注意统一登录：用户名、邮箱、手机号码，  》》》》单点登录
       User paraUser = new User();
-      paraUser.setUserName("dooriya");
-      paraUser.setPassWord("123456");
+//      paraUser.setUserName("dooriya");
+//      paraUser.setPassWord("123456");
+      paraUser.setUserName(userName);
+      paraUser.setPassWord(passWord);
       User user = this.userService.findUserBySelected(paraUser);
       if(user!=null&&user.getId()>0){
           session.setAttribute("user", user);
@@ -33,7 +35,7 @@ public class ManagerAction {
           System.out.println("账户或密码错误！");
       }
 
-      return "manager/login";
+      return "manager/main";
   }
     
      

@@ -13,13 +13,17 @@ hs_err_pid*
 
 target/
 
-.gitignore
+
 
 .log
-/bin/
-.project
 
 .project
 
 .settings
 .classpath
+=======
+
+.classpath
+.settings/
+.project
+>>>>>>> test
