@@ -20,6 +20,13 @@ public class ArticleDaoImpl extends BaseHibernateTemplate implements ArticleDao 
         List<Article> articleList = this.getHibernateTemplate().find(" From Article ");
         return articleList;
     }
+
+    @Override
+    public long addArticle(Article article) {
+        
+        this.getHibernateTemplate().save(article);
+        return article.getId();
+    }
     
     
 
