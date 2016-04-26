@@ -13,17 +13,17 @@
 	      <param-value>classpath*:spring/spring-*.xml</param-value>
 	</context-param>
 <!-- log4j -->
-<!-- 	<context-param> -->
-<!--     <param-name>webAppRootKey</param-name> -->
-<!--     <param-value>webApp.root</param-value> -->
-<!--     </context-param> -->
-<!-- 	 <context-param> -->
-<!-- 	  <param-name>log4jConfigLocation</param-name> -->
-<!-- 	    <param-value>classpath:log4j.properties</param-value> -->
-<!-- 	 </context-param> -->
-<!-- 	<listener>   -->
-<!-- 	     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>   -->
-<!-- 	 </listener> -->
+	<context-param>
+    <param-name>webAppRootKey</param-name>
+    <param-value>webApp.root</param-value>
+    </context-param>
+	 <context-param>
+	  <param-name>log4jConfigLocation</param-name>
+	    <param-value>classpath:log4j.properties</param-value>
+	 </context-param>
+	<listener>  
+	     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>  
+	 </listener>
 	 
 <!-- <filter> -->
 <!--       <description>spring encoding Filter</description> -->
@@ -48,10 +48,10 @@
       <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <!-- 这个配置不起作用 -->
-    <listener>
-        <description>log4j listener</description>
-        <listener-class>com.ocean.frame.main.common.Log4jListener</listener-class>
-    </listener>
+<!--     <listener> -->
+<!--         <description>log4j listener</description> -->
+<!--         <listener-class>com.ocean.frame.main.common.Log4jListener</listener-class> -->
+<!--     </listener> -->
      <!-- 配置spring核心servlet  如若照这个配置，需要强制配置spring-servlet.xml文件！-->
 <!--     <servlet> -->
 <!--         <servlet-name>spring</servlet-name> -->

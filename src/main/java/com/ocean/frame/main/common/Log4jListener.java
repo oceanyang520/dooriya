@@ -18,7 +18,7 @@ public class Log4jListener implements ServletContextListener {
         String log4jDir = sce.getServletContext().getRealPath("/");
         System.out.println("@@@@@@@@@@@@@@@@@@############"+log4jDir);
         
-        log4jDir="E:\\ocean\\dooriya\\src\\main\\webapp";
+//        log4jDir="E:\\ocean\\dooriya\\src\\main\\webapp";
         System.setProperty(log4jDirkey,log4jDir);
         System.out.println(System.getProperty(log4jDirkey));
         System.out.println();
