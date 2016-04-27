@@ -21,6 +21,22 @@ login页面利用静态方式到达
 
 多 pom 设置
 
+观察日志
+
+login异步单独js封装(2016.04.27)必须完成！
+
+//解决406等非String返回的json问题
+
+
+about form
+jquery.form 插件
+jquery easyui插件
+http://www.cnblogs.com/heyuquan/p/form-plug-async-submit.html
+http://jquery.cuishifeng.cn/
+success: function (data) {
+                $("#responseText").text(data);
+            }
+
 
 
 

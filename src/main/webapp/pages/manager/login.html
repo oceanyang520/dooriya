@@ -1,6 +1,114 @@
 <!DOCTYPE html>
-<
+
 <html>
+<!-- <script src="../../uiframe/assets/js/jquery.form.js"></script> -->
+<!-- <script src="../../uiframe/jquery-easyui-1.4.5/plugins/jquery.form.js"></script> -->
+<!-- <script src="login.js" ></script> -->
+<script type="text/javascript">
+
+function loginSub(){
+    $("#loginForm").form('submit', {
+        url: 'www.baidu.com',
+        onSubmit:function() {
+            var isValid = $(this).form('validate');
+            alert(isValid)
+            if (!isValid) {
+//                 $.messager.progress('close');
+            }
+            return isValid;
+        }   
+    });
+}
+
+function logins(){
+// 	 $('#customerForm').form('submit', {
+//          url: url,
+//          onSubmit:function() {
+//              var isValid = $(this).form('validate');
+//              if (!isValid) {
+//                  $.messager.progress('close');
+//              }
+//              return isValid;
+//          },
+//          success: function(data) {
+//              $.messager.progress('close');
+//              data = JSON.parse(data);
+//              if (data.ret=="400001") {
+//                  CustomerApp.close();
+//                  EU.showTopTip('error',"您没有权限");                         
+//              }else if(data.ret=="0"){
+//                  EU.showTopTip('success','保存成功！');
+//                  top.updateTab('客户档案管理');   
+// //               parent.CustomerApp.search();
+// //                CustomerApp.close();
+//                   parent.parent.closeTab('客户详情');
+//              }else if(data.ret=="1"){
+//                  EU.showTopTip('error','手机号码已存在')
+//              }else{
+//                  EU.showTopTip('error','保存失败！');
+//              }
+//          }
+//      });
+	
+// 	$("#form1").form();
+
+
+// 	xxx:function(){
+// 		alert("it is ok");
+//         $('#customerQuestion').form('submit', {
+//             url: url,
+//             onSubmit:function() {
+//                 var isValid = $(this).form('validate');
+//                 if (!isValid) {
+//                     $.messager.progress('close');
+//                 }
+//                 return isValid;
+//             },
+//             success: function(data) {
+//                 data = JSON.parse(data);
+//                 if (data.ret=="0") {
+//                     parent.CustomerApp.init();
+//                     EU.showTopTip('success','保存成功！');
+//                     CustomerApp.close();
+//                 }else{
+//                     EU.showTopTip('error',result);
+//                 }
+//             }
+//         });
+// 	}
+	
+	
+	
+
+
+// 	$.ajax({
+	    
+// 	    url:'login.html',
+// 	    data:11
+// 	    ,
+// 	    success:function(){
+	        
+// 	    },error:function(){
+	        
+// 	    },err:function(){
+	        
+// 	    },xxx:111,
+// 	    onSubmit{
+	    	
+// 	    }
+// 	}
+	    
+	        
+}
+// var tests = function(){
+	
+// 	alert(alert);
+// 	$("#form1").form(){
+		
+		
+// 	}
+// }
+</script>
 <head>
     <meta charset="gbk" />
     <!--[if ie]><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/><![endif]-->
@@ -74,7 +182,7 @@
 
                                             <div class="space-6"></div>
 
-                                            <form action="login.html" name="loginForm">
+                                            <form  name="loginForm" id="loginForm">
                                                 <fieldset>
                                                     <label class="block clearfix">
                                                         <span class="block input-icon input-icon-right">
@@ -98,7 +206,7 @@
                                                             <span class="lbl"> Remember Me</span>
                                                         </label>
 
-                                                        <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                                        <button onclick="loginSub()" type="submit" class="width-35 pull-right btn btn-sm btn-primary">
                                                             <i class="icon-key"></i>
                                                             登录
                                                         </button>

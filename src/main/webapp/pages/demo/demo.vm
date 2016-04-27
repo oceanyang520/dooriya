@@ -2,9 +2,19 @@
 #Head("begin")
 #LoadGUI("default")
 #LoadGUI("upload")
-#LoadJS("js/shop/customer_info")
+#LoadJS("xx/customer_info")
 #Head("end")
-
+<script>
+    var tests = function(){
+    
+    alert(alert);
+    $("#form1").form(){
+        
+        
+    }
+}
+</script>
+</script>
 <body onload="CustomerApp.init()">
     #Hidden("APP_ROOT_PATH", "$!env.getWebURL('')")
     #Hidden("ID","$!customer.id")
