@@ -255,11 +255,12 @@
         <version>1.1.26</version>
     </dependency>
     <!-- alibaba json end -->
-<!--       <dependency> -->
-<!--           <groupId>com.fasterxml.jackson.core</groupId> -->
-<!--           <artifactId>jackson-core</artifactId> -->
-<!--           <version>2.3.3</version> -->
-<!--       </dependency> -->
+
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>2.3.3</version>
+      </dependency>
 <!--       <dependency> -->
 <!--           <groupId>com.fasterxml.jackson.core</groupId> -->
 <!--           <artifactId>jackson-databind</artifactId> -->
@@ -271,6 +272,17 @@
 <!-- 		         <version>2.3.3</version> -->
 <!-- 		      </dependency> -->
 <!--       <dependency> -->
+<!--     以下可以保证json返回非406问题 -->
+<dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
 <!--           <groupId>org.apache.httpcomponents</groupId> -->
 <!--           <artifactId>fluent-hc</artifactId> -->
 <!--           <version>4.2.5</version> -->
