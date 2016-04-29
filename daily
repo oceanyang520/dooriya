@@ -38,6 +38,8 @@ success: function (data) {
             }
 
 
+form异步跳转页面，无法做到alert定住不跳转到字符串页面
+
 
 
 
