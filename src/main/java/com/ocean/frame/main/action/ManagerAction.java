@@ -19,8 +19,8 @@ public class ManagerAction {
     private UserService userService;
 
   @RequestMapping("/login")
-  @ResponseBody
-  public JsonResult<String> login(String userName, String passWord, HttpSession session ){
+//  @ResponseBody
+  public @ResponseBody JsonResult<String> login(String userName, String passWord, HttpSession session ){
       //注意拦截器
      //注意统一登录：用户名、邮箱、手机号码，  》》》》单点登录
       JsonResult<String> jsonR = new JsonResult<String>();
@@ -61,6 +61,11 @@ public class ManagerAction {
         return "";
     }
     
+    @RequestMapping("toMain")
+    public String toMain(){
+        
+        return "manager/main";
+    }
     
     
 }
