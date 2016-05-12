@@ -1,0 +1,68 @@
+2016/05/07 11:55:00  INFO ContextLoader:273 - Root WebApplicationContext: initialization started
+2016/05/07 11:55:00 DEBUG StandardServletEnvironment:114 - Initializing new StandardServletEnvironment
+2016/05/07 11:55:00 DEBUG StandardServletEnvironment:103 - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardServletEnvironment:103 - Adding [servletContextInitParams] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardServletEnvironment:103 - Adding [jndiProperties] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardServletEnvironment:103 - Adding [systemProperties] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardServletEnvironment:103 - Adding [systemEnvironment] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardServletEnvironment:120 - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,jndiProperties,systemProperties,systemEnvironment]
+2016/05/07 11:55:00  INFO XmlWebApplicationContext:495 - Refreshing Root WebApplicationContext: startup date [Sat May 07 11:55:00 CST 2016]; root of context hierarchy
+2016/05/07 11:55:00 DEBUG StandardServletEnvironment:163 - Replacing [servletContextInitParams] PropertySource with [servletContextInitParams]
+2016/05/07 11:55:00 DEBUG StandardEnvironment:114 - Initializing new StandardEnvironment
+2016/05/07 11:55:00 DEBUG StandardEnvironment:103 - Adding [systemProperties] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardEnvironment:103 - Adding [systemEnvironment] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardEnvironment:120 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2016/05/07 11:55:00 DEBUG StandardEnvironment:114 - Initializing new StandardEnvironment
+2016/05/07 11:55:00 DEBUG StandardEnvironment:103 - Adding [systemProperties] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardEnvironment:103 - Adding [systemEnvironment] PropertySource with lowest search precedence
+2016/05/07 11:55:00 DEBUG StandardEnvironment:120 - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+2016/05/07 11:55:00 DEBUG PathMatchingResourcePatternResolver:550 - Looking for matching resources in directory tree [E:\ocean\dooriya\target\classes\spring]
+2016/05/07 11:55:00 DEBUG PathMatchingResourcePatternResolver:612 - Searching directory [E:\ocean\dooriya\target\classes\spring] for files matching pattern [E:/ocean/dooriya/target/classes/spring/spring-*.xml]
+2016/05/07 11:55:00 DEBUG PathMatchingResourcePatternResolver:351 - Resolved location pattern [classpath*:spring/spring-*.xml] to resources [file [E:\ocean\dooriya\target\classes\spring\spring-dao.xml], file [E:\ocean\dooriya\target\classes\spring\spring-mvc.xml]]
+2016/05/07 11:55:00  INFO XmlBeanDefinitionReader:315 - Loading XML bean definitions from file [E:\ocean\dooriya\target\classes\spring\spring-dao.xml]
+2016/05/07 11:55:00 DEBUG DefaultDocumentLoader:72 - Using JAXP provider [org.apache.xerces.jaxp.DocumentBuilderFactoryImpl]
+2016/05/07 11:55:01 ERROR ContextLoader:308 - Context initialization failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Unexpected exception parsing XML document from file [E:\ocean\dooriya\target\classes\spring\spring-dao.xml]; nested exception is java.lang.NoClassDefFoundError: org/apache/xerces/dom/ElementImpl
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:412)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:334)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.loadBeanDefinitions(XmlBeanDefinitionReader.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:174)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:209)
+	at org.springframework.beans.factory.support.AbstractBeanDefinitionReader.loadBeanDefinitions(AbstractBeanDefinitionReader.java:180)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:125)
+	at org.springframework.web.context.support.XmlWebApplicationContext.loadBeanDefinitions(XmlWebApplicationContext.java:94)
+	at org.springframework.context.support.AbstractRefreshableApplicationContext.refreshBeanFactory(AbstractRefreshableApplicationContext.java:131)
+	at org.springframework.context.support.AbstractApplicationContext.obtainFreshBeanFactory(AbstractApplicationContext.java:522)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:436)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:385)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:284)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:111)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:672)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:403)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:664)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:239)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1212)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:610)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:453)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:89)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:262)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:80)
+Caused by: java.lang.NoClassDefFoundError: org/apache/xerces/dom/ElementImpl
+	at org.apache.xerces.parsers.AbstractDOMParser.startDocument(Unknown Source)
+	at org.apache.xerces.impl.xs.XMLSchemaValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.dtd.XMLDTDValidator.startDocument(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentScannerImpl.startEntity(Unknown Source)
+	at org.apache.xerces.impl.XMLVersionDetector.startDocumentParsing(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.DOMParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at org.springframework.beans.factory.xml.DefaultDocumentLoader.loadDocument(DefaultDocumentLoader.java:75)
+	at org.springframework.beans.factory.xml.XmlBeanDefinitionReader.doLoadBeanDefinitions(XmlBeanDefinitionReader.java:388)
+	... 25 more
+Caused by: java.lang.ClassNotFoundException: org.apache.xerces.dom.ElementImpl
+	at runjettyrun.ProjectClassLoader.loadClass(ProjectClassLoader.java:94)
+	... 37 more
